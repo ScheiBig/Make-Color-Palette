@@ -3,7 +3,11 @@
 ## chmod +x pages-deploy.sh if it doesn't work ##
 
 # deploy project
+npm i
 npm run build
+
+# commit deployment
+git commit
 
 # Create a temporary directory
 temp_dir=$(mktemp -d)
