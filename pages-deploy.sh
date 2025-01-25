@@ -2,6 +2,9 @@
 
 ## chmod +x pages-deploy.sh if it doesn't work ##
 
+# deploy project
+npm run build
+
 # Create a temporary directory
 temp_dir=$(mktemp -d)
 
