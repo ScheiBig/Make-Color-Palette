@@ -167,7 +167,7 @@ const switchToggle = () => {
 			<thead>
 				<tr>
 					<th v-for="[key, value] in colors" :key="key" class="h-20 m-1"
-						:style="`color: ${color(value.palette[5])}`">
+						:style="`color: ${color(value.palette[500])}`">
 						<span class="font-bold">{{ key }}</span>
 						<br>
 						<span class="italic font-normal">{{ value.tag }}</span>
@@ -182,47 +182,57 @@ const switchToggle = () => {
 				</tr>
 				<tr>
 					<td v-for="[key, value] in colors" :key="key">
-						<Square :style="`background: ${colStyle(value.palette[1])}`" class="text-black" />
+						<Square :style="`background: ${colStyle(value.palette[50])}`" class="text-black" />
 					</td>
 				</tr>
 				<tr>
 					<td v-for="[key, value] in colors" :key="key">
-						<Square :style="`background: ${colStyle(value.palette[2])}`" class="text-black" />
+						<Square :style="`background: ${colStyle(value.palette[100])}`" class="text-black" />
 					</td>
 				</tr>
 				<tr>
 					<td v-for="[key, value] in colors" :key="key">
-						<Square :style="`background: ${colStyle(value.palette[3])}`" class="text-black" />
+						<Square :style="`background: ${colStyle(value.palette[200])}`" class="text-black" />
 					</td>
 				</tr>
 				<tr>
 					<td v-for="[key, value] in colors" :key="key">
-						<Square :style="`background: ${colStyle(value.palette[4])}`" class="text-black" />
+						<Square :style="`background: ${colStyle(value.palette[300])}`" class="text-black" />
 					</td>
 				</tr>
 				<tr>
 					<td v-for="[key, value] in colors" :key="key">
-						<Square :style="`background: ${colStyle(value.palette[5])}`" class="text-black" />
+						<Square :style="`background: ${colStyle(value.palette[400])}`" class="text-black" />
 					</td>
 				</tr>
 				<tr>
 					<td v-for="[key, value] in colors" :key="key">
-						<Square :style="`background: ${colStyle(value.palette[6])}`" class="text-black" />
+						<Square :style="`background: ${colStyle(value.palette[500])}`" class="text-black" />
 					</td>
 				</tr>
 				<tr>
 					<td v-for="[key, value] in colors" :key="key">
-						<Square :style="`background: ${colStyle(value.palette[7])}`" class="text-black" />
+						<Square :style="`background: ${colStyle(value.palette[600])}`" class="text-black" />
 					</td>
 				</tr>
 				<tr>
 					<td v-for="[key, value] in colors" :key="key">
-						<Square :style="`background: ${colStyle(value.palette[8])}`" class="text-black" />
+						<Square :style="`background: ${colStyle(value.palette[700])}`" class="text-black" />
 					</td>
 				</tr>
 				<tr>
 					<td v-for="[key, value] in colors" :key="key">
-						<Square :style="`background: ${colStyle(value.palette[9])}`" class="text-black" />
+						<Square :style="`background: ${colStyle(value.palette[800])}`" class="text-black" />
+					</td>
+				</tr>
+				<tr>
+					<td v-for="[key, value] in colors" :key="key">
+						<Square :style="`background: ${colStyle(value.palette[900])}`" class="text-black" />
+					</td>
+				</tr>
+				<tr>
+					<td v-for="[key, value] in colors" :key="key">
+						<Square :style="`background: ${colStyle(value.palette[950])}`" class="text-black" />
 					</td>
 				</tr>
 			</tbody>

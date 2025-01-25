@@ -1,63 +1,71 @@
 export type OKLCH = { L: number; C: number; H: number }
 export type RGB = { R: number; G: number; B: number; hex: string }
 
-export type paletteColor = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+export type paletteColor = "0" | "50" | "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900" | "950"
 
 export type palette = Record<paletteColor, OKLCH>
 
 const lightnessMap: Record<paletteColor, number> = {
-	"0": 0.950,
-	"1": 0.890,
-	"2": 0.820,
-	"3": 0.740,
-	"4": 0.625,
-	"5": 0.500,
-	"6": 0.400,
-	"7": 0.350,
-	"8": 0.300,
-	"9": 0.250,
+	"0": 0.980,
+	"50": 0.950,
+	"100": 0.890,
+	"200": 0.820,
+	"300": 0.740,
+	"400": 0.625,
+	"500": 0.500,
+	"600": 0.400,
+	"700": 0.350,
+	"800": 0.300,
+	"900": 0.250,
+	"950": 0.200,
 }
 
 /** Hue in range 172..227 */
 const chromaMapTernary: Record<paletteColor, number> = {
-	"0": 0.030,
-	"1": 0.040,
-	"2": 0.050,
-	"3": 0.070,
-	"4": 0.100,
-	"5": 0.080,
-	"6": 0.060,
-	"7": 0.050,
-	"8": 0.040,
-	"9": 0.030,
+	"0": 0.009,
+	"50": 0.030,
+	"100": 0.040,
+	"200": 0.050,
+	"300": 0.070,
+	"400": 0.100,
+	"500": 0.080,
+	"600": 0.060,
+	"700": 0.050,
+	"800": 0.040,
+	"900": 0.030,
+	"950": 0.017,
 }
 
 /** Hue in range 57..122 | 156..<172 | 227<..243 */
 const chromaMapSecondary: Record<paletteColor, number> = {
-	"0": 0.030,
-	"1": 0.045,
-	"2": 0.060,
-	"3": 0.085,
-	"4": 0.120,
-	"5": 0.096,
-	"6": 0.072,
-	"7": 0.058,
-	"8": 0.044,
-	"9": 0.030,
+	"0": 0.009,
+	"50": 0.030,
+	"100": 0.045,
+	"200": 0.060,
+	"300": 0.085,
+	"400": 0.120,
+	"500": 0.096,
+	"600": 0.072,
+	"700": 0.058,
+	"800": 0.044,
+	"900": 0.030,
+	"950": 0.019,
 }
 
 /** Hue in range 0..<57 | 122<..<156 | 243<..360 */
 const chromaMapPrimary: Record<paletteColor, number> = {
-	"0": 0.030,
-	"1": 0.053,
-	"2": 0.075,
-	"3": 0.108,
-	"4": 0.150,
-	"5": 0.120,
-	"6": 0.090,
-	"7": 0.070,
-	"8": 0.050,
-	"9": 0.030,
+	"0": 0.009,
+	"50": 0.030,
+	"100": 0.053,
+	"200": 0.075,
+	"300": 0.108,
+	"400": 0.150,
+	"500": 0.120,
+	"600": 0.090,
+	"700": 0.070,
+	"800": 0.050,
+	"900": 0.030,
+	"950": 0.019,
 }
 
 function rgb_sat(rgb: RGB): number {
@@ -182,7 +190,7 @@ export function makePalette(seedOrHue: string | number, saturation?: number): pa
 
 	const palette: palette = {} as palette
 
-	for (const k in Object.keys(chromaMap)) {
+	for (const k of Object.keys(chromaMap)) {
 		const key = k as paletteColor
 		palette[key] = {
 			L: lightnessMap[key],
